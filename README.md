@@ -4,6 +4,8 @@
 
 English:
 
+In order to setup the game, please download the class files and all the thing in the file folder, and just paste them into your new java project. 
+
 Gomoku/Wuziqi(五子棋）is a traditional Chinese abstract strategic chess game. I have made both multiplayer 1v1 mode and versus Ai mode for this game
 
 Rules:
@@ -19,6 +21,8 @@ Key features:
 3. There are other features including determining whoever goes first, bringing you to an online website in order to train your gomoku's strategic thinkings, and a replay button which allows you to restart your game at any time.
 
 中文:
+
+安装指南：请将所有的class文件以及所有在files文件夹里的东西，全部拷贝的你新建的项目里然后直接运行即可。
 
 五子棋就不用我介绍了吧，规则也不用说了吧，大家都懂得，小弟今年高二，渣作各位大神无视即可。。。
 
