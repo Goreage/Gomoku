@@ -5,6 +5,7 @@
 English:
 
 Gomoku/Wuziqi(五子棋）is a traditional Chinese abstract strategic chess game. I have made both multiplayer 1v1 mode and versus Ai mode for this game
+
 Rules:
 
 Black always plays first, and players alternate in placing a stone of their color on an empty intersection. The winner is the first player to get an unbroken row of five stones horizontally, vertically, or diagonally.
