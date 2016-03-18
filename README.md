@@ -4,7 +4,7 @@
 
 English:
 
-In order to setup the game, please download the class files and all the thing in the file folder, and just paste them into your new java project. 
+In order to setup the game, please download the class files and all the things in the file folder, and just paste them into your new java project. 
 
 Gomoku/Wuziqi(五子棋）is a traditional Chinese abstract strategic chess game. I have made both multiplayer 1v1 mode and versus Ai mode for this game
 
