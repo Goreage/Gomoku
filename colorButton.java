@@ -244,7 +244,7 @@ public class colorButton extends JButton implements ActionListener {
 	    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i-14]&&
 			    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+14].getColor()&&
 			    	   FiveChess.guess[i+14].getColor()==FiveChess.guess[i+28].getColor()&&
-			    	   FiveChess.guess[i+28].getColor()==FiveChess.guess[i+14].getColor()){
+			    	   FiveChess.guess[i+28].getColor()==FiveChess.guess[i+42].getColor()){
 			    	   FiveChess.guess[i-14].doClick();
 			    	   isPressed3[i-14]=false;
 			    	   pos=false;
