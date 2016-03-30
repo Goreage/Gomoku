@@ -24,8 +24,8 @@ public class colorButton extends JButton implements ActionListener {
 	
     public colorButton() {
     	
-		black = new ImageIcon(this.getClass().getResource("black2.png"));
-		white=  new ImageIcon(this.getClass().getResource("white3.png"));
+		black = new ImageIcon(this.getClass().getResource("black6.png"));
+		white=  new ImageIcon(this.getClass().getResource("white4.png"));
 	    sound = this.getClass().getResource("158966__carlmartin__jembay-hit-6-center.wav");
 	    c = Applet.newAudioClip(sound);
 		color = "a";
@@ -35,9 +35,6 @@ public class colorButton extends JButton implements ActionListener {
 		isWhite = false;
 		isPressed = true;
 		isPressed3 = new boolean[225];
-		for(int i =0; i<225;i++){
-			isPressed3[i]=true;
-		}
 		isPressed4 = true;
 		isPressed5=true;
         this.addActionListener(this);
@@ -45,7 +42,7 @@ public class colorButton extends JButton implements ActionListener {
 	
     
 	public void setBlack(boolean black){
-    	isBlack=black;
+        isBlack=black;
     }
   //get the Strings from the color buttons
 	public String getColor(){
@@ -124,11 +121,12 @@ public class colorButton extends JButton implements ActionListener {
 		    value ++;
 		    value %=2;
 		    int k = Player.showMov();
-		    isPressed3[k]=false;
+		    //System.out.println(k);
+		    
 		    Ai(k);
-		    FiveChess.isWin();// Calculate who wins
+		    FiveChess.isWin();
+		    
 		   
-			    //FiveChess.guess[k+15].doClick();
 			 }
 	}
 	
@@ -139,7 +137,7 @@ public class colorButton extends JButton implements ActionListener {
 	    	for(int x=0;x<15;x++){
 	          for(int y=2;y<12;y++){
 	        	  int a=y+(x*15);
-	    	if(FiveChess.guess[a].getColor()!="a"&&isPressed3[a-1]&&
+	    	if(FiveChess.guess[a].getColor()!="a"&&FiveChess.guess[a-1].getColor()=="a"&&
 			    	   FiveChess.guess[a].getColor()==FiveChess.guess[a+1].getColor()&&
 			    	   FiveChess.guess[a+1].getColor()==FiveChess.guess[a+2].getColor()&&
 			    	   FiveChess.guess[a+2].getColor()==FiveChess.guess[a+3].getColor()){
@@ -156,7 +154,7 @@ public class colorButton extends JButton implements ActionListener {
 	    for(int x=0;x<15;x++){
 	    	for(int y=0;y<11;y++){
 	    		int i=y+(x*15);
-	    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i+4]&&
+	    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i+4].getColor()=="a"&&
 	    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+1].getColor()&&
 	    	   FiveChess.guess[i+1].getColor()==FiveChess.guess[i+2].getColor()&&
 	    	   FiveChess.guess[i+2].getColor()==FiveChess.guess[i+3].getColor()){
@@ -173,7 +171,7 @@ public class colorButton extends JButton implements ActionListener {
 	         for(int x=1;x<12;x++){
 	         for(int y=0;y<15;y++){ 
 	        	 int r = y+(x*15);
-	             if(FiveChess.guess[r].getColor()!="a"&&isPressed3[r-15]&&
+	             if(FiveChess.guess[r].getColor()!="a"&&FiveChess.guess[r-15].getColor()=="a"&&
 			    	   FiveChess.guess[r].getColor()==FiveChess.guess[r+15].getColor()&&
 			    	   FiveChess.guess[r+15].getColor()==FiveChess.guess[r+30].getColor()&&
 			    	   FiveChess.guess[r+30].getColor()==FiveChess.guess[r+45].getColor()){
@@ -190,7 +188,7 @@ public class colorButton extends JButton implements ActionListener {
 	       for(int x=0;x<11;x++){
 	    	   for(int y=0;y<15;y++){
 	    		   int i = y+(x*15);
-	    	   if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i+60]&&
+	    	   if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i+60].getColor()=="a"&&
 			    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+15].getColor()&&
 			    	   FiveChess.guess[i+15].getColor()==FiveChess.guess[i+30].getColor()&&
 			    	   FiveChess.guess[i+30].getColor()==FiveChess.guess[i+45].getColor()){
@@ -207,7 +205,7 @@ public class colorButton extends JButton implements ActionListener {
 	    	for(int x=1;x<12;x++){
 	    		for(int y=1;y<12;y++){
 	    			int i =y+(x*15);
-	    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i-16]&&
+	    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i-16].getColor()=="a"&&
 			    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+16].getColor()&&
 			    	   FiveChess.guess[i+16].getColor()==FiveChess.guess[i+32].getColor()&&
 			    	   FiveChess.guess[i+32].getColor()==FiveChess.guess[i+48].getColor()){
@@ -224,7 +222,7 @@ public class colorButton extends JButton implements ActionListener {
 	    	for(int x=0;x<11;x++){
 	    		for(int y=0;y<11;y++){
 	    			int i = y+(x*15);
-	    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i+64]&&
+	    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i+64].getColor()=="a"&&
 			    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+16].getColor()&&
 			    	   FiveChess.guess[i+16].getColor()==FiveChess.guess[i+32].getColor()&&
 			    	   FiveChess.guess[i+32].getColor()==FiveChess.guess[i+48].getColor()){
@@ -241,7 +239,7 @@ public class colorButton extends JButton implements ActionListener {
 	    	for(int x=1;x<12;x++){
 	    		for(int y=0;y<11;y++){
 	    			int i = y+(x*15);
-	    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i-14]&&
+	    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i-14].getColor()=="a"&&
 			    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+14].getColor()&&
 			    	   FiveChess.guess[i+14].getColor()==FiveChess.guess[i+28].getColor()&&
 			    	   FiveChess.guess[i+28].getColor()==FiveChess.guess[i+42].getColor()){
@@ -259,7 +257,7 @@ public class colorButton extends JButton implements ActionListener {
 	    	for(int x =0;x<11;x++){
 	    		for(int y=4;y<15;y++){
 	    			int i=y+(x*15);
-	    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i+56]&&
+	    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i+56].getColor()=="a"&&
 			    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+14].getColor()&&
 			    	   FiveChess.guess[i+14].getColor()==FiveChess.guess[i+28].getColor()&&
 			    	   FiveChess.guess[i+28].getColor()==FiveChess.guess[i+42].getColor()){
@@ -272,12 +270,12 @@ public class colorButton extends JButton implements ActionListener {
 	    	}
 	    }
 	}	
-	public void saveThreeB(){
+	public void saveThreeB(int k){
 		//Horizontal 
 				if(pos){
 		        for(int h=0;h<15;h++){
-			    for(int k=0;k<11;k++){
-			    	int i = k+(h*15);
+			    for(int l=0;l<11;l++){
+			    	int i = l+(h*15);
 			    	if(FiveChess.guess[i].getColor()=="a"&&FiveChess.guess[i+1].getColor()=="black"&&
 			    			FiveChess.guess[i+1].getColor()==FiveChess.guess[i+2].getColor()&&
 			    			FiveChess.guess[i+2].getColor()==FiveChess.guess[i+3].getColor()&&
@@ -326,7 +324,7 @@ public class colorButton extends JButton implements ActionListener {
 				
 			    
 			    }
-				if(pos){
+				/*if(pos){
 				    for(int x=0;x<11;x++){
 				    	for(int r=4;r<15;r++){
 				    		int p = r+(x*15);
@@ -334,20 +332,15 @@ public class colorButton extends JButton implements ActionListener {
 				    				 FiveChess.guess[p+14].getColor()== FiveChess.guess[p+28].getColor()&&
 				    						 FiveChess.guess[p+28].getColor()== FiveChess.guess[p+42].getColor()&&
 				    								 FiveChess.guess[p+56].getColor()=="a"){
-				    			if( p+70<225&&FiveChess.guess[p+70].getColor()=="black"){
-				    				 FiveChess.guess[p+56].doClick();
-				    				 isPressed3[p+56]=false;
-						    		 pos=false;
-						    		 break;
-				    			}
+				    			
 				    		}
 				    	}
 				    }
-				}
+				}*/
 			    //right-Diagonal five in a row
 				if(pos){
-			    for(int x=0;x<11;x++){
-			    	for(int r=0;r<11;r++){
+			    for(int x=0;x<10;x++){
+			    	for(int r=0;r<10;r++){
 			    		int p = r+(x*15);
 			    		if(FiveChess.guess[p].getColor()=="a"&&FiveChess.guess[p+16].getColor()=="black"&&
 			    				FiveChess.guess[p+16].getColor()==FiveChess.guess[p+32].getColor()&&
@@ -373,19 +366,26 @@ public class colorButton extends JButton implements ActionListener {
 			    }
 			    //left-diagonal five in a row
 				if(pos){
-			    for(int x=0;x<11;x++){
-			    	for(int r=4;r<15;r++){
+			    for(int x=0;x<10;x++){
+			    	for(int r=5;r<15;r++){
 			    		int p = r+(x*15);
 			    		if( FiveChess.guess[p].getColor()=="a"&&FiveChess.guess[p+14].getColor()=="black"&&
 			    				 FiveChess.guess[p+14].getColor()== FiveChess.guess[p+28].getColor()&&
 			    						 FiveChess.guess[p+28].getColor()== FiveChess.guess[p+42].getColor()&&
 			    								 FiveChess.guess[p+56].getColor()=="a"){
 			    
-			    			
-			    			 FiveChess.guess[p].doClick();
+			    			if( p+70<225&&FiveChess.guess[p+70].getColor()=="black"){
+			    				 FiveChess.guess[p+56].doClick();
+			    				 isPressed3[p+56]=false;
+					    		 pos=false;
+					    		 break;
+			    			}
+			    			else{
+			    			FiveChess.guess[p].doClick();
 				    		 isPressed3[p]=false;
 				    		 pos=false;
 				    		 break;
+			    			}
 			    			
 			    	
 			    		}
@@ -451,24 +451,7 @@ public class colorButton extends JButton implements ActionListener {
 				
 			    
 			    }
-				if(pos){
-				    for(int x=0;x<11;x++){
-				    	for(int r=4;r<15;r++){
-				    		int p = r+(x*15);
-				    		if( FiveChess.guess[p].getColor()=="a"&&FiveChess.guess[p+14].getColor()!="a"&&
-				    				 FiveChess.guess[p+14].getColor()== FiveChess.guess[p+28].getColor()&&
-				    						 FiveChess.guess[p+28].getColor()== FiveChess.guess[p+42].getColor()&&
-				    								 FiveChess.guess[p+56].getColor()=="a"){
-				    			if( p+70<225&&FiveChess.guess[p+70].getColor()!="a"){
-				    				 FiveChess.guess[p+56].doClick();
-				    				 isPressed3[p+56]=false;
-						    		 pos=false;
-						    		 break;
-				    			}
-				    		}
-				    	}
-				    }
-				}
+			
 			    //right-Diagonal five in a row
 				if(pos){
 			    for(int x=0;x<11;x++){
@@ -485,16 +468,18 @@ public class colorButton extends JButton implements ActionListener {
 				    		 break;
 			    			}
 			    			else{
-			    			 FiveChess.guess[p].doClick();
-				    		 isPressed3[p]=false;
-				    		 pos=false;
-				    		 break;
+			    				FiveChess.guess[p].doClick();
+				    			isPressed3[p]=false;
+					    		 pos=false;
+					    		 break;
 			    			}
+			    			
 			    		
 			    	
 			    		}
 			    	}
 			    }
+			    
 			    }
 			    //left-diagonal five in a row
 				if(pos){
@@ -506,19 +491,28 @@ public class colorButton extends JButton implements ActionListener {
 			    						 FiveChess.guess[p+28].getColor()== FiveChess.guess[p+42].getColor()&&
 			    								 FiveChess.guess[p+56].getColor()=="a"){
 			    
-			    			
-			    			 FiveChess.guess[p].doClick();
-				    		 isPressed3[p]=false;
-				    		 pos=false;
-				    		 break;
+			    			if( p+70<225&&FiveChess.guess[p+70].getColor()!="a"){
+			    				 FiveChess.guess[p+56].doClick();
+			    				 isPressed3[p+56]=false;
+					    		 pos=false;
+					    		 break;
+			    			}
+			    			else{
+			    				 FiveChess.guess[p].doClick();
+					    		 isPressed3[p]=false;
+					    		 pos=false;
+					    		 break;
+			    			}
 			    			
 			    	
 			    		}
 			    }
 			    }
 				}
+				
 			    	
-			    
+				
+	    			
 			   
 			    
 	}
@@ -530,7 +524,7 @@ public class colorButton extends JButton implements ActionListener {
 			if(isPressed2){
 				isPressed2=false;
 				int move = (int)(Math.random()*223+0);
-				while(isPressed3[move]==false){
+				while(FiveChess.guess[move].getColor()!="a"){
 					 move = (int)(Math.random()*223+0);
 				}
 				FiveChess.guess[move].doClick();
@@ -544,11 +538,11 @@ public class colorButton extends JButton implements ActionListener {
 		    if(isPressed2){
 		    isPressed2 = false;
 		    save();
-		    saveThreeB();
+		    saveThreeB(k);
 		    saveThree();
 		        if(pos){
 		    	if(isPressed5&&k<223){
-		    	if(isPressed3[k+1]&&FiveChess.guess[k+1].getColor()=="a"&&FiveChess.guess[k+2].getColor()=="black"){
+		    	if(FiveChess.guess[k+1].getColor()=="a"&&FiveChess.guess[k+2].getColor()=="black"){
 		    		FiveChess.guess[k+1].doClick();
 		    		isPressed3[k+1]=false;
 		    		isPressed5=false;
@@ -558,7 +552,7 @@ public class colorButton extends JButton implements ActionListener {
 		        }
 		    	if(pos){
 		    	if(isPressed5&&k>1){
-		    	if(isPressed3[k-1]&&FiveChess.guess[k-1].getColor()=="a"&&FiveChess.guess[k-2].getColor()=="black"){
+		    	if(FiveChess.guess[k-1].getColor()=="a"&&FiveChess.guess[k-2].getColor()=="black"){
 		    		FiveChess.guess[k-1].doClick();
 		    		isPressed3[k-1]=false;
 		    		pos=false;
@@ -573,7 +567,7 @@ public class colorButton extends JButton implements ActionListener {
 		    	for(int x=0;x<13;x++){
 		    		for(int y=0;y<13;y++){
 		    			int i=y+(x*15);
-		    			if(isPressed3[i+16]&&k==i&&FiveChess.guess[i+16].getColor()=="a"&&FiveChess.guess[i+32].getColor()=="black"){
+		    			if(k==i&&FiveChess.guess[i+16].getColor()=="a"&&FiveChess.guess[i+32].getColor()=="black"){
 				    		FiveChess.guess[i+16].doClick();
 				    		isPressed3[i+16]=false;
 				    		pos=false;
@@ -586,7 +580,7 @@ public class colorButton extends JButton implements ActionListener {
 			    	for(int x=2;x<15;x++){
 			    		for(int y=2;y<15;y++){
 			    			int i=y+(x*15);
-			    			if(isPressed3[i-16]&&k==i&&FiveChess.guess[i-16].getColor()=="a"&&FiveChess.guess[i-32].getColor()=="black"){
+			    			if(k==i&&FiveChess.guess[i-16].getColor()=="a"&&FiveChess.guess[i-32].getColor()=="black"){
 					    		FiveChess.guess[i-16].doClick();
 					    		isPressed3[i-16]=false;
 					    		pos=false;
@@ -599,7 +593,7 @@ public class colorButton extends JButton implements ActionListener {
 			    	for(int x=0;x<13;x++){
 			    		for(int y=2;y<15;y++){
 			    			int i=y+(x*15);
-			    			if(isPressed3[i+14]&&k==i&&FiveChess.guess[i+14].getColor()=="a"&&FiveChess.guess[i+28].getColor()=="black"){
+			    			if(k==i&&FiveChess.guess[i+14].getColor()=="a"&&FiveChess.guess[i+28].getColor()=="black"){
 					    		FiveChess.guess[i+14].doClick();
 					    		isPressed3[i+14]=false;
 					    		pos=false;
@@ -613,7 +607,7 @@ public class colorButton extends JButton implements ActionListener {
 		    	for(int x=2;x<15;x++){
 		    		for(int y=0;y<13;y++){
 		    			int i=y+(x*15);
-		    			if(isPressed3[i-14]&&k==i&&FiveChess.guess[i-14].getColor()=="a"&&FiveChess.guess[i-28].getColor()=="black"){
+		    			if(k==i&&FiveChess.guess[i-14].getColor()=="a"&&FiveChess.guess[i-28].getColor()=="black"){
 				    		FiveChess.guess[i-14].doClick();
 				    		isPressed3[i-14]=false;
 				    		pos=false;
@@ -628,7 +622,7 @@ public class colorButton extends JButton implements ActionListener {
 		    	for(int x=0;x<15;x++){
 		          for(int y=2;y<13;y++){
 		        	  int a=y+(x*15);
-		    	if(FiveChess.guess[a].getColor()!="a"&&isPressed3[a-1]&&
+		    	if(FiveChess.guess[a].getColor()!="a"&&FiveChess.guess[a-1].getColor()=="a"&&
 				    	   FiveChess.guess[a].getColor()==FiveChess.guess[a+1].getColor()&&
 				    	   FiveChess.guess[a+1].getColor()==FiveChess.guess[a+2].getColor()){
 				    	   FiveChess.guess[a-1].doClick();
@@ -644,7 +638,7 @@ public class colorButton extends JButton implements ActionListener {
 		    for(int x=0;x<15;x++){
 		    	for(int y=0;y<12;y++){
 		    		int i=y+(x*15);
-		    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i+3]&&
+		    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i+3].getColor()=="a"&&
 		    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+1].getColor()&&
 		    	   FiveChess.guess[i+1].getColor()==FiveChess.guess[i+2].getColor()){
 		    	   FiveChess.guess[i+3].doClick();
@@ -660,7 +654,7 @@ public class colorButton extends JButton implements ActionListener {
 		         for(int x=1;x<13;x++){
 		         for(int y=0;y<15;y++){ 
 		        	 int r = y+(x*15);
-		             if(FiveChess.guess[r].getColor()!="a"&&isPressed3[r-15]&&
+		             if(FiveChess.guess[r].getColor()!="a"&&FiveChess.guess[r-15].getColor()=="a"&&
 				    	   FiveChess.guess[r].getColor()==FiveChess.guess[r+15].getColor()&&
 				    	   FiveChess.guess[r+15].getColor()==FiveChess.guess[r+30].getColor()){
 				    	   FiveChess.guess[r-15].doClick();
@@ -676,7 +670,7 @@ public class colorButton extends JButton implements ActionListener {
 		       for(int x=0;x<12;x++){
 		    	   for(int y=0;y<15;y++){
 		    		   int i = y+(x*15);
-		    	   if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i+45]&&
+		    	   if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i+45].getColor()=="a"&&
 				    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+15].getColor()&&
 				    	   FiveChess.guess[i+15].getColor()==FiveChess.guess[i+30].getColor()){
 				    	   FiveChess.guess[i+45].doClick();
@@ -692,7 +686,7 @@ public class colorButton extends JButton implements ActionListener {
 		    	for(int x=1;x<13;x++){
 		    		for(int y=1;y<13;y++){
 		    			int i =y+(x*15);
-		    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i-16]&&
+		    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i-16].getColor()=="a"&&
 				    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+16].getColor()&&
 				    	   FiveChess.guess[i+16].getColor()==FiveChess.guess[i+32].getColor()){
 				    	   FiveChess.guess[i-16].doClick();
@@ -708,7 +702,7 @@ public class colorButton extends JButton implements ActionListener {
 		    	for(int x=0;x<12;x++){
 		    		for(int y=0;y<12;y++){
 		    			int i = y+(x*15);
-		    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i+48]&&
+		    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i+48].getColor()=="a"&&
 				    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+16].getColor()&&
 				    	   FiveChess.guess[i+16].getColor()==FiveChess.guess[i+32].getColor()){
 				    	   FiveChess.guess[i+48].doClick();
@@ -724,7 +718,7 @@ public class colorButton extends JButton implements ActionListener {
 		    	for(int x=1;x<13;x++){
 		    		for(int y=0;y<12;y++){
 		    			int i = y+(x*15);
-		    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i-14]&&
+		    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i-14].getColor()=="a"&&
 				    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+14].getColor()&&
 				    	   FiveChess.guess[i+14].getColor()==FiveChess.guess[i+28].getColor()){
 				    	   FiveChess.guess[i-14].doClick();
@@ -741,7 +735,7 @@ public class colorButton extends JButton implements ActionListener {
 		    	for(int x =0;x<12;x++){
 		    		for(int y=3;y<15;y++){
 		    			int i=y+(x*15);
-		    	if(FiveChess.guess[i].getColor()!="a"&&isPressed3[i+42]&&
+		    	if(FiveChess.guess[i].getColor()!="a"&&FiveChess.guess[i+42].getColor()=="a"&&
 				    	   FiveChess.guess[i].getColor()==FiveChess.guess[i+14].getColor()&&
 				    	   FiveChess.guess[i+14].getColor()==FiveChess.guess[i+28].getColor()){
 				    	   FiveChess.guess[i+42].doClick();
@@ -755,8 +749,8 @@ public class colorButton extends JButton implements ActionListener {
 		    
 		    
 		    //normal move
-		    if(pos&isPressed4){
-		    	if(k<=209){
+		    if(pos&&isPressed4){
+		    	if(k<=209&&isPressed4){
 		    	if(FiveChess.guess[k+15].getColor()=="a"){
 		    		       
 		    		       FiveChess.guess[k+15].doClick();
