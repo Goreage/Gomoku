@@ -1,4 +1,4 @@
-# Gomoku-Wuziqi-Game (involved English description and 有中文说明)
+# Gomoku-Wuziqi-Game 
 
 @AUTHOR : RICKY(RUIQI)PENG @作者：彭瑞其
 
@@ -19,19 +19,5 @@ Key features:
 2. Whenever there is a player who achieved 5 in a row, the system will automatically announce the winner immediatetly.
 
 3. There are other features including determining whoever goes first, bringing you to an online website in order to train your gomoku's strategic thinkings, and a replay button which allows you to restart your game at any time.
-
-中文:
-
-
-安装指南：解压后只用那个Gomoku文件夹即可，可无视Files文件夹
-
-
-特色介绍：
-
-1.本游戏支持Ai对战，有三个难度级别，分别是"Ruiqi-the-beast"，也就是最简单，任何人都可以打过的难度，"Ricky-Peng"，也就是普通难度，还有"Ricky-the-god"这个难度是不可能被战胜的，就算你黑棋先手也不可能，至于为什么各位可以下载试试看：）
-
-2.无论谁达到了五子连珠，系统都会直接自动显示谁是胜利者，并且结束比赛。
-
-3.这款软件还有其他的特点，比如说决定哪个人先手（哪个人拿黑子），把你带到可以训练你的五子棋棋艺的网站，以及一个你任何时候都可以使用的重新开始按钮，只要打不顺，那就重新开始吧！
 
 
