@@ -1,6 +1,6 @@
 # Gomoku-Wuziqi-Game 
 
-@AUTHOR : RICKY(RUIQI)PENG @作者：彭瑞其
+@AUTHOR : RICKY(RUIQI)PENG
 
 English:
 
